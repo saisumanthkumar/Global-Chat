@@ -5,8 +5,7 @@ import { GoGlobe } from "react-icons/go";
 import {FaUsers} from 'react-icons/fa'
 
 let socket;
-const link = "https://global-951.herokuapp.com/";
-// const link = 'http://localhost:3001'
+const link = 'http://localhost:3001';
 
 function Global({ location }) {
   const [name, setname] = useState("");
