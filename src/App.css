@@ -1,38 +1,432 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+:root {
+    --dark-color-a: #4d64ff;
+    --dark-color-b: #7386ff;
+    --light-color: #e6e9ff;
+    --success-color: #5cb85c;
+    --error-color: #d9534f;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    scroll-behavior: smooth;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.bgblur {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: -2;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('./mainbg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
-.App-link {
-  color: #61dafb;
+.mainbody {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.global {
+    font-family: sans-serif;
+    width: 100%;
+    height: 360px;
+    max-width: 420px;
+    background-color: white;
+    position: relative;
+    box-shadow: inset 0px 0px 20px rgb(110, 110, 110);
+    background-color: var(--dark-color-b);
+}
+
+.global h2 {
+    background-color: var(--dark-color-a);
+    font-family: sans-serif;
+    letter-spacing: 2px;
+    font-weight: 300;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    padding: 12px 16px;
+    border: 1px solid black;
+}
+
+.global h2 span {
+    position: relative;
+    padding: 10px;
+    top: 5px;
+}
+
+.global p {
+    color: white;
+    padding: 20px 40px;
+    font-family: monospace;
+    font-size: 16px;
+}
+
+.global p code {
+    color: black;
+}
+
+.global input[type=text] {
+    width: 80%;
+    position: relative;
+    font-family: monospace;
+    margin-top: 20px;
+    height: 40px;
+    left: 10%;
+    display: block;
+    border: none;
+    outline: none;
+    border: 1px solid rgb(168, 168, 168);
+    border-radius: 2px;
+    padding: 0px 12px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: rgb(0, 29, 53);
+}
+
+.global input[type=text]::placeholder {
+    color: rgb(160, 160, 160);
+    font-size: 16px;
+}
+
+.global input[type=text]:focus {
+    box-shadow: inset 0px 0px 6px var(--light-color);
+}
+
+.global .items p {
+    padding: 0px 45px;
+    position: relative;
+    top: 15px;
+}
+
+.global button {
+    border: none;
+    left: 10%;
+    width: 80%;
+    color: var(--dark-color-a);
+    background-color: #e2e6ff;
+    font-family: monospace;
+    padding: 10px 40px;
+    position: relative;
+    margin-right: 30px;
+    top: 20px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.bg {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('./inbg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.chatbody {
+    margin: auto;
+    background-color: white;
+    width: 900px;
+    height: 400px;
+    margin-top: 150px;
+}
+
+.chatbody .head {
+    padding: 8px 16px;
+    background-color: var(--dark-color-a);
+    font-family: monospace;
+    letter-spacing: 2px;
+    color: white;
+    font-weight: 100;
+    font-size: 20px;
+}
+
+.chatbody .head span {
+    position: relative;
+    padding: 5px 10px;
+    top: 5px;
+}
+
+.chatbody .mainchatbody {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--dark-color-b);
+    height: 100%;
+}
+
+.chatbody .mainchatbody .left {
+    width: 30%;
+}
+
+.chatbody .mainchatbody .right {
+    background-color: rgba(255, 255, 255, 0);
+    width: 70%;
+}
+
+.chatbody .mainchatbody .right .messages {
+    overflow-y: scroll;
+}
+
+.chatbody .mainchatbody .left .title {
+    font-family: monospace;
+    height: 80px;
+    padding: 6px 10px;
+}
+
+.chatbody .mainchatbody .left .title em {
+    font-size: 18px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.chatbody .mainchatbody .left .title p {
+    letter-spacing: 0.5px;
+    font-size: 18px;
+    color: white;
+    width: 100%;
+    padding: 6px;
+    margin-top: 5px;
+    border-radius: 6px;
+    background-color: var(--dark-color-a);
+}
+
+.chatbody .mainchatbody .left .online p {
+    color: white;
+    padding: 10px 10px 0px 10px;
+    font-family: monospace;
+    font-size: 18px;
+    font-weight: 200;
+}
+
+.chatbody .mainchatbody .left .online span {
+    position: relative;
+    padding: 5px;
+    top: 6px;
+    font-size: 24px;
+}
+
+.chatbody .mainchatbody .left .online ul {
+    font-family: monospace;
+    border-radius: 6px;
+    font-size: 17px;
+    list-style: none;
+    padding: 5px;
+    margin: 10px;
+    background-color: var(--dark-color-a);
+    height: 240px;
+    overflow-y: scroll;
+    color: white;
+}
+
+.chatbody .mainchatbody .left .online li {
+    padding: 2px 5px;
+}
+
+.chatbody .mainchatbody .right .messages {
+    padding: 10px;
+    background-color: white;
+    height: 90%;
+}
+
+.send {
+    position: relative;
+    background-color: var(--dark-color-a);
+    height: 10%;
+    padding: 5px 10px;
+}
+
+.send button {
+    height: 30px;
+    background-color: white;
+    width: 20%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    background-color: var(--dark-color-b);
+    font-family: monospace;
+    font-size: 20px;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.send input[type=text] {
+    border: none;
+    padding: 0px 10px;
+    font-family: monospace;
+    outline: none;
+    width: 80%;
+    height: 30px;
+    font-size: 20px;
+    background-color: white;
+}
+
+.send input[type=text]::placeholder {
+    font-size: 16px;
+}
+
+.right .message {
+    font-family: sans-serif;
+    padding: 5px 10px;
+    border-radius: 6px;
+    background-color: var(--light-color);
+    margin: 10px;
+    font-family: monospace;
+}
+
+.right .message .username {
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(161, 161, 161);
+    margin-bottom: 4px;
+}
+
+.right .message .usermessage {
+    font-size: 18px;
+    color: black;
+    color: black;
+}
+
+.right .adminMessage {
+    font-family: sans-serif;
+    padding: 5px 10px;
+    border-radius: 6px;
+    background-color: #a3b0ff;
+    margin: 10px;
+    font-family: monospace;
+}
+
+.right .adminMessage .adminusername {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 4px;
+}
+
+.right .adminMessage .adminusermessage {
+    font-size: 18px;
+    color: black;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+ ::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+ ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+@media only screen and (max-width:900px) {
+    .chatbody {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width:700px) {
+    .chatbody {
+        margin: 0px;
+        height: 100vh;
+        width: 100vw;
+        background-color: transparent;
+    }
+    .chatbody .head {
+        display: none;
+    }
+    .chatbody .mainchatbody {
+        background-color: transparent;
+        height: 100%;
+    }
+    .chatbody .mainchatbody .left {
+        display: none;
+    }
+    .chatbody .mainchatbody .right {
+        background-color: transparent;
+        width: 100%;
+    }
+    .chatbody .mainchatbody .right .messages {
+        overflow-y: scroll;
+    }
+    .chatbody .mainchatbody .right .messages {
+        padding: 10px;
+        background-color: transparent;
+        height: 92%;
+    }
+    .send {
+        background-color: transparent;
+        height: 60px;
+        position: fixed;
+        width: 100%;
+        left: 0px;
+        bottom: 0px;
+    }
+    .send button {
+        height: 40px;
+        background-color: black;
+        border: 1px solid white;
+    }
+    .send input[type=text] {
+        height: 40px;
+    }
+    .right .message {
+        font-family: sans-serif;
+        padding: 5px 10px;
+        border-radius: 6px;
+        background-color: white;
+        margin: 15px;
+        font-family: monospace;
+    }
+    .right .message .username {
+        font-size: 16px;
+        font-weight: bold;
+        color: rgb(161, 161, 161);
+        margin-bottom: 4px;
+    }
+    .right .message .usermessage {
+        font-size: 20px;
+        color: black;
+    }
+    .right .adminMessage {
+        font-family: sans-serif;
+        padding: 5px 10px;
+        background-color: black;
+        border-radius: 3px;
+        border: 1px solid white;
+        margin: 15px;
+        font-family: monospace;
+    }
+    .right .adminMessage .adminusername {
+        font-size: 16px;
+        font-weight: bold;
+        color: rgb(161, 161, 161);
+        margin-bottom: 4px;
+    }
+    .right .adminMessage .adminusermessage {
+        font-size: 20px;
+        color: white;
+    }
 }
