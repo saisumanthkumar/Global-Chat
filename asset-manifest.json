@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/Global-Chat/static/css/main.af2e735e.chunk.css",
+    "main.js": "/Global-Chat/static/js/main.01b5d078.chunk.js",
+    "main.js.map": "/Global-Chat/static/js/main.01b5d078.chunk.js.map",
+    "runtime-main.js": "/Global-Chat/static/js/runtime-main.accdd7c4.js",
+    "runtime-main.js.map": "/Global-Chat/static/js/runtime-main.accdd7c4.js.map",
+    "static/js/2.12596324.chunk.js": "/Global-Chat/static/js/2.12596324.chunk.js",
+    "static/js/2.12596324.chunk.js.map": "/Global-Chat/static/js/2.12596324.chunk.js.map",
+    "index.html": "/Global-Chat/index.html",
+    "static/css/main.af2e735e.chunk.css.map": "/Global-Chat/static/css/main.af2e735e.chunk.css.map",
+    "static/js/2.12596324.chunk.js.LICENSE.txt": "/Global-Chat/static/js/2.12596324.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/Global-Chat/static/media/mainbg.3e7b6b1d.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.accdd7c4.js",
+    "static/js/2.12596324.chunk.js",
+    "static/css/main.af2e735e.chunk.css",
+    "static/js/main.01b5d078.chunk.js"
+  ]
+}
