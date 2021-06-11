@@ -7,10 +7,10 @@ import './App.css'
 function App() {
   return (
     <>
-         <div className="bgblur"></div>
+      <div className="bgblur"></div>
 
       <Router>
-        <Route path='/' exact component={Home} />
+        <Route path='/Global-Chat/' exact component={Home} />
         <Route path='/global'  component={Global} />
       </Router>
     </>
