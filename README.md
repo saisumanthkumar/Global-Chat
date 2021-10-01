@@ -12,7 +12,7 @@ More features to be added
 
 ## Contribute :
 
-Anyone is free to raise issues regarding the Application and resolve Bugs 🐛 Using PR.
+Anyone is free to raise issues regarding the Application and resolve Bugs 🐛 Using your valuable PR.
 
 ## Cloning Repo :
 
